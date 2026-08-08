@@ -1,0 +1,36 @@
+generated: '2026-08-08'
+method: probed
+source: live GET of the RFC 8615 /.well-known/ surface on every Brightloom host
+note: >-
+  No /.well-known/ document is published on any Brightloom host. A control path
+  (/this-path-should-not-exist-control-12345) also returned 404, confirming these
+  are true 404s rather than a soft-404 catch-all that would falsely credit a hit.
+  No api./docs./developer./app./status. subdomain resolves for brightloom.com, and
+  the legacy Eatsa API host api.eatsa.com no longer resolves at all, so there is no
+  second host to probe.
+hosts:
+- host: https://www.brightloom.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://brightloom.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+found: 0
