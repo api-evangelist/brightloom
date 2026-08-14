@@ -8,9 +8,15 @@ description: 'Brightloom is a San Francisco customer data and customer intellige
   point-of-sale, loyalty, ecommerce and marketing data into a single customer view,
   reports on data health, runs AI-driven hyper-segmentation and anomaly detection over
   that data, and recommends the next campaign and audience a brand should target.
-  Brightloom is sold as an end-user SaaS with prebuilt connectors to common POS, loyalty
-  and marketing platforms rather than as a developer platform: it publishes no public
-  API reference, developer portal, SDK or machine-readable specification.'
+  Brightloom was sold as an end-user SaaS with prebuilt connectors to common POS, loyalty
+  and marketing platforms rather than as a developer platform, and it published no public
+  API reference, developer portal, SDK or machine-readable specification. The company now
+  appears defunct: the last dated item on its own press page is December 2022, the entire
+  operating estate it once held TLS certificates for is gone from DNS — api.brightloom.com,
+  api-prd/api-dev, the cgp.brightloom.com application, its auth0-cgp Auth0 tenant, and the
+  status, support and knowledgebase hosts all NXDOMAIN — brightloom.com publishes no MX
+  record, and only the frozen marketing site remains, with its /about/ page defaced by
+  injected search-spam.'
 url: https://raw.githubusercontent.com/api-evangelist/brightloom/refs/heads/main/apis.yml
 image: https://www.brightloom.com/assets/components/axl.theme/site/media/fav/apple-touch-icon_v-2.2.png
 x-type: company
@@ -19,7 +25,7 @@ x-tier: stub
 x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-08'
-modified: '2026-08-08'
+modified: '2026-08-14'
 tags:
 - Company
 - Customer Data Platform
@@ -53,28 +59,41 @@ common:
 - type: Twitter
   url: https://twitter.com/Brightloom
 x-enrichment:
-  date: '2026-08-08'
+  date: '2026-08-14'
   status: minimal
-  artifacts_added: 2
+  artifacts_added: 0
   pass: local-v1
 x-coverage:
   state: none
-  reason: no-developer-program
+  reason: defunct
   detail: >-
-    Brightloom sells its restaurant customer data platform as an end-user SaaS with
-    prebuilt POS/loyalty connectors and ships no developer surface at all — its own
-    homepage nav points at /how-it-works/, /integrations/, /sign-up/, /security/,
-    /privacy/ and /terms/ and every one of them 404s on a 2023-vintage site whose
-    /about/ page now serves injected SEO spam, no api./docs./developer./app. subdomain
-    resolves for brightloom.com, and the legacy Eatsa API host api.eatsa.com is
-    NXDOMAIN.
+    Brightloom's operating estate has been decommissioned — Certificate Transparency shows
+    it ran api.brightloom.com, api-prd/api-dev, the cgp.brightloom.com Customer Growth
+    Platform app, an auth0-cgp Auth0 tenant, and status/support/knowledgebase hosts, and
+    all sixteen of those hostnames now return NXDOMAIN while brightloom.com carries no MX
+    record, leaving only a marketing site frozen at its December 2022 press release whose
+    own nav links (/how-it-works/, /integrations/, /sign-up/) 404 and whose /about/ page
+    serves injected Indonesian gambling search-spam.
   evidence:
   - url: https://www.brightloom.com/
     status: 200
   - url: https://www.brightloom.com/integrations/
     status: 404
+  - url: https://www.brightloom.com/sign-up/
+    status: 404
   - url: https://www.brightloom.com/openapi.json
+    status: 404
+  - url: https://www.brightloom.com/graphql
     status: 404
   - url: https://www.brightloom.com/.well-known/agent-card.json
     status: 404
-  checked: '2026-08-08'
+  - url: https://www.brightloom.com/.well-known/api-catalog
+    status: 404
+  - url: https://api.brightloom.com/openapi.json
+    status: 0
+    note: >-
+      status 0 = no HTTP response at all; curl exits 6 (could not resolve host) because
+      api.brightloom.com is NXDOMAIN. Not a 404 — the host itself is gone.
+  - url: https://crt.sh/?q=%25.brightloom.com
+    status: 200
+  checked: '2026-08-14'
