@@ -1,21 +1,31 @@
-generated: '2026-08-08'
+generated: '2026-08-14'
 method: probed
-source: live GET of the RFC 8615 /.well-known/ surface on every Brightloom host
+source: >-
+  live GET of the RFC 8615 /.well-known/ surface on every reachable Brightloom host,
+  plus DNS resolution of every brightloom.com hostname recovered from Certificate
+  Transparency (crt.sh) — including the historical API, app, status and support hosts
 note: >-
-  No /.well-known/ document is published on any Brightloom host. A control path
-  (/this-path-should-not-exist-control-12345) also returned 404, confirming these
-  are true 404s rather than a soft-404 catch-all that would falsely credit a hit.
-  No api./docs./developer./app./status. subdomain resolves for brightloom.com, and
-  the legacy Eatsa API host api.eatsa.com no longer resolves at all, so there is no
-  second host to probe.
+  No /.well-known/ document is published on any reachable Brightloom host. A control
+  path (/this-is-a-control-path-12345) also returned 404 with the identical 2,587-byte
+  body, confirming these are true 404s rather than a soft-404 catch-all that would
+  falsely credit a hit. Only www.brightloom.com and the apex still resolve. Certificate
+  Transparency shows Brightloom did once run a real API and application estate —
+  api.brightloom.com (plus api-prd/api-dev), the cgp.brightloom.com Customer Growth
+  Platform app, an Auth0 tenant at auth0-cgp.brightloom.com, status.brightloom.com,
+  support.brightloom.com and knowledgebase.brightloom.com — and every one of those
+  hostnames is now NXDOMAIN. brightloom.com also publishes no MX record, so the domain
+  cannot receive mail. No pointer is emitted from this file: it records an absence.
 hosts:
 - host: https://www.brightloom.com
+  resolves: true
   documents:
   - path: /.well-known/security.txt
     status: 404
   - path: /.well-known/openid-configuration
     status: 404
   - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
     status: 404
   - path: /.well-known/api-catalog
     status: 404
@@ -26,6 +36,7 @@ hosts:
   - path: /.well-known/agent.json
     status: 404
 - host: https://brightloom.com
+  resolves: true
   documents:
   - path: /.well-known/security.txt
     status: 404
@@ -33,4 +44,59 @@ hosts:
     status: 404
   - path: /.well-known/agent.json
     status: 404
+decommissioned_hosts:
+  source: https://crt.sh/?q=%25.brightloom.com
+  checked: '2026-08-14'
+  note: >-
+    Hostnames Brightloom held TLS certificates for that no longer resolve. Recorded as
+    evidence of a retired estate, not as a probeable surface.
+  hosts:
+  - host: api.brightloom.com
+    dns: NXDOMAIN
+    was: API host (wildcard *.api.brightloom.com certificate)
+  - host: api-prd.brightloom.com
+    dns: NXDOMAIN
+    was: production API host
+  - host: api-dev.brightloom.com
+    dns: NXDOMAIN
+    was: development API host
+  - host: cgp.brightloom.com
+    dns: NXDOMAIN
+    was: Customer Growth Platform application
+  - host: auth0-cgp.brightloom.com
+    dns: NXDOMAIN
+    was: Auth0 custom-domain tenant for the CGP application
+  - host: status.brightloom.com
+    dns: NXDOMAIN
+    was: status page
+  - host: support.brightloom.com
+    dns: NXDOMAIN
+    was: support portal
+  - host: knowledgebase.brightloom.com
+    dns: NXDOMAIN
+    was: knowledge base
+  - host: legal.brightloom.com
+    dns: NXDOMAIN
+    was: legal / terms host
+  - host: go.brightloom.com
+    dns: NXDOMAIN
+    was: marketing landing host
+  - host: athena.brightloom.com
+    dns: NXDOMAIN
+    was: internal service
+  - host: web3.brightloom.com
+    dns: NXDOMAIN
+    was: Web3 Advisory microsite
+  - host: nft-alpha.brightloom.com
+    dns: NXDOMAIN
+    was: NFT alpha environment (auth/loom/recommend/search subhosts)
+  - host: prod.brightloom.com
+    dns: NXDOMAIN
+    was: production environment
+  - host: stage.brightloom.com
+    dns: NXDOMAIN
+    was: staging environment
+  - host: dev.brightloom.com
+    dns: NXDOMAIN
+    was: development environment
 found: 0
