@@ -18,6 +18,17 @@ description: 'Brightloom is a San Francisco customer data and customer intellige
   record, and only the frozen marketing site remains, with its /about/ page defaced by
   injected search-spam.'
 url: https://raw.githubusercontent.com/api-evangelist/brightloom/refs/heads/main/apis.yml
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 image: https://www.brightloom.com/assets/components/axl.theme/site/media/fav/apple-touch-icon_v-2.2.png
 x-type: company
 x-source: harvest:secondary-market
