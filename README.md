@@ -64,5 +64,79 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Brightloom is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/brightloom_stock/
+Brightloom is a San Francisco customer data and customer intelligence platform for restaurant and retail brands. It began as Eatsa, the automated quinoa-bowl restaurant chain, and rebranded to Brightloom in 2019 when Starbucks licensed select components of its Digital Flywheel customer engagement software to the company, took an equity stake and a board seat alongside a $30M round. The product unifies point-of-sale, loyalty, ecommerce and marketing data into a single customer view, reports on data health, runs AI-driven hyper-segmentation and anomaly detection over that data, and recommends the next campaign and audience a brand should target. Brightloom was sold as an end-user SaaS with prebuilt connectors to common POS, loyalty and marketing platforms rather than as a developer platform, and it published no public API reference, developer portal, SDK or machine-readable specification. The company now appears defunct: the last dated item on its own press page is December 2022, the entire operating estate it once held TLS certificates for is gone from DNS — api.brightloom.com, api-prd/api-dev, the cgp.brightloom.com application, its auth0-cgp Auth0 tenant, and the status, support and knowledgebase hosts all NXDOMAIN — brightloom.com publishes no MX record, and only the frozen marketing site remains, with its /about/ page defaced by injected search-spam.
+
+**Areas:** Company · Customer Data Platform · Customer Intelligence · Restaurant · Retail · Marketing · Loyalty · Segmentation · Point-of-Sale · Analytics
+
+## Brightloom on APIs.io
+
+Everything profiled for Brightloom is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/brightloom/](https://apis.io/providers/brightloom/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Brightloom Domain Security](https://apis.io/security/brightloom/brightloom-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.brightloom.com/)
+
+## API Evangelist rating
+
+**Kin Score 3.5** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 49.1 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 0.0 |
+| Access clarity | 0.0 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/brightloom/](https://apis.io/providers/brightloom/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Brightloom: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/brightloom/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
